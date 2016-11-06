@@ -3,29 +3,6 @@ var totalQuestions = 0;
 var questionsRight = 0;
 var clicked = false;
 
-function jsonp(url, callback) {
-    var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
-    window[callbackName] = function(data) {
-        delete window[callbackName];
-        document.body.removeChild(script);
-        callback(data);
-    };
-
-    var script = document.createElement('script');
-    script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-    document.body.appendChild(script);
-}
-
-var x;
-jsonp('http://api.urbandictionary.com/v0/random/', function(data) {
-   var x = data;
-   var y;
-   jsonp('http://api.urbandictionary.com/v0/random/', function(data) {
-      y = data;
-      console.log(x + " " + y);
-   });
-});
-
 function getJSON(url){
   var Httpreq = new XMLHttpRequest(); // a new request
   Httpreq.open("GET",url,false);
@@ -42,10 +19,10 @@ function getUrbanTest() {
   // get an urban dictionary word, if it is too long (>120 chars) or if the word
   // is in the description
   do {
-    var urbanWord1 = JSON.parse(getJSON("http://api.urbandictionary.com/v0/random/"));
+    var urbanWord1 = JSON.parse(getJSON("http://api.urbandictionary.com/v0/random"));
     var quote = urbanWord1["list"][0]["definition"]
   } while (quote.split(' ').length > 80 || quote.includes(urbanWord1["list"][0]["word"]));
-  var urbanWord2 = JSON.parse(getJSON("http://api.urbandictionary.com/v0/random/"));
+  var urbanWord2 = JSON.parse(getJSON("http://api.urbandictionary.com/v0/random"));
 
   // format quote and insert it into html
   var quote = "\"" + quote + "\"";
