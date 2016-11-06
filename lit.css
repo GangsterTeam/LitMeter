@@ -1,0 +1,86 @@
+@font-face {
+  font-family: thinAF;
+  src: url(assets/thinAF.ttf);
+}
+
+body {
+  background-color: #f6f6f6;
+  margin: 20px 60px;
+  font-family: thinAF;
+  text-align: center;
+}
+
+#title {
+  color: #ff7271;
+  font-size: 120px;
+  padding-bottom: 20px;
+}
+
+#percentage {
+  color: #ff7271;
+  font-size: 60px;
+  padding-bottom: 20px;
+}
+
+#container {
+  padding-top: 40px;
+  color: #ff7271;
+  font-size: 40px;
+}
+
+#quote {
+  padding-bottom: 20px;
+}
+
+#line-break {
+  width: 100%;
+  content: url(assets/lb.jpg);
+}
+
+#or {
+  display: inline-block;
+}
+
+#answer {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#next {
+  margin: auto;
+  padding-top:20px;
+  content: url(assets/next.png);
+  width:90px;
+}
+
+button {
+  outline: none;
+  margin: 20px 20px 40px 20px;
+  background-color: #ff7271;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  border-radius: 10px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #ff3d3c;
+}
+
+footer {
+  color: #ff7271;
+  position: absolute;
+  bottom: 0;
+  height; 40px;
+  margin-top: 40px;
+  font-size:20px;
+}
+
+a {
+  color: #ff7271;
+}
