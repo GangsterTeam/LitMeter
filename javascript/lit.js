@@ -19,10 +19,10 @@ function getUrbanTest() {
   // get an urban dictionary word, if it is too long (>120 chars) or if the word
   // is in the description
   do {
-    var urbanWord1 = JSON.parse(getJSON("https://api.urbandictionary.com/v0/random"));
+    var urbanWord1 = JSON.parse(getJSON("http://api.urbandictionary.com/v0/random"));
     var quote = urbanWord1["list"][0]["definition"]
   } while (quote.split(' ').length > 80 || quote.includes(urbanWord1["list"][0]["word"]));
-  var urbanWord2 = JSON.parse(getJSON("https://api.urbandictionary.com/v0/random"));
+  var urbanWord2 = JSON.parse(getJSON("http://api.urbandictionary.com/v0/random"));
 
   // format quote and insert it into html
   var quote = "\"" + quote + "\"";
