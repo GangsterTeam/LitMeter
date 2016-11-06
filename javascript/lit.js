@@ -17,10 +17,10 @@ function jsonp(url, callback) {
 }
 
 var x;
-jsonp('https://api.urbandictionary.com/v0/random', function(data) {
+jsonp('http://api.urbandictionary.com/v0/random', function(data) {
    var x = data;
    var y;
-   jsonp('https://api.urbandictionary.com/v0/random', function(data) {
+   jsonp('http://api.urbandictionary.com/v0/random', function(data) {
       y = data;
       console.log(x + " " + y);
    });
